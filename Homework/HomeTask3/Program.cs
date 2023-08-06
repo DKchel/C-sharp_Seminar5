@@ -6,7 +6,7 @@ double diff = 0;
 
 for (int i = 0; i < array.Length; i++)
 {
-    array[i] = new Random().NextDouble() * 100;
+    array[i] = new Random().Next(-99, 99) + new Random().NextDouble();
     Console.Write($"{array[i]} ");
 }
 
