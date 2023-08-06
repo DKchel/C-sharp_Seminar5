@@ -6,22 +6,27 @@ double diff = 0;
 
 for (int i = 0; i < array.Length; i++)
 {
-    array[i] = new Random().Next(-99, 100);
+    array[i] = new Random().NextDouble() * 100;
     Console.Write($"{array[i]} ");
 }
 
-    for (int i = 0; i < array.Length - 1; i++)
+int minPosition = 0;
+int maxPosition = 0;
+
+    for (int i = 0; i < array.Length; i++)
     {
-        int minPosition = i;
-        int maxPosition = i;
-                    
-        for (int j = i + 1; j < array.Length; j++)
+                            
+        if(array[i] < array[minPosition])
         {
-            if(array[j] < array[minPosition]) minPosition = j;
-            else if(array[j] > array[maxPosition]) maxPosition = j;
-            diff = array[maxPosition] - array[minPosition];   
-        }    
-    }
+            minPosition = i;
+        }
+        else if(array[i] > array[maxPosition])
+        {
+            maxPosition = i;
+        }
+        diff = array[maxPosition] - array[minPosition];   
+    }    
+
 
 Console. WriteLine();
 Console. WriteLine($"Разница между максимальным и минимальным элементами массива равна: {diff}");
