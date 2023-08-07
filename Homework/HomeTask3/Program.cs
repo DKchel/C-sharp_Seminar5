@@ -6,7 +6,7 @@ double diff = 0;
 
 for (int i = 0; i < array.Length; i++)
 {
-    array[i] = new Random().Next(-99, 99) + new Random().NextDouble();
+    array[i] = Math.Round(new Random().Next(-99, 99) + new Random().NextDouble(), 2);
     Console.Write($"{array[i]} ");
 }
 
@@ -29,4 +29,4 @@ int maxPosition = 0;
 
 
 Console. WriteLine();
-Console. WriteLine($"Разница между максимальным и минимальным элементами массива равна: {diff}");
+Console. WriteLine($"Разница между максимальным и минимальным элементами массива равна: {Math.Round(diff, 2)}");
